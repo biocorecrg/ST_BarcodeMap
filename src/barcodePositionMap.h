@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include <iomanip>
 #include <set>
+#include <boost/serialization/library_version_type.hpp>
 #include <boost/serialization/version.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>

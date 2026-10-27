@@ -12,6 +12,7 @@
 #include "options.h"
 #include "writer.h"
 #include "barcodeProcessor.h"
+#include <boost/serialization/library_version_type.hpp>
 #include <boost/serialization/version.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/map.hpp>
