@@ -1,12 +1,40 @@
 # ST_BarcodeMap
 This program can map barcode of stereomics-seq to stereomics-chip
 
-## Compile
+## Container (Docker / Singularity)
+
+Pre-built container images are automatically published via GitHub Actions to GitHub Container Registry (GHCR):
+
+```bash
+docker pull ghcr.io/biocorecrg/st_barcodemap:latest
+```
+
+### Running with Docker
+
+```bash
+docker run --rm -v "$(pwd)":/data -w /data ghcr.io/biocorecrg/st_barcodemap:latest \
+  --in mask.h5 --in1 read1.fq.gz --in2 read2.fq.gz --out combine_read.fq.gz --mismatch 1 --thread 2
+```
+
+### Running with Apptainer / Singularity
+
+```bash
+singularity exec docker://ghcr.io/biocorecrg/st_barcodemap:latest ST_BarcodeMap \
+  --in mask.h5 --in1 read1.fq.gz --in2 read2.fq.gz --out combine_read.fq.gz --mismatch 1 --thread 2
+```
+
+### Building the Docker image locally
+
+```bash
+docker build -t st_barcodemap:latest .
+```
+
+## Compile locally
 ### Platform & Environment
 * linux
-* gcc-8.2.0
+* gcc-8.2.0 or newer
 
-## Prerequisties
+## Prerequisites
 | Package       | Version  | Description                                                |
 | ------------- | -------- | ---------------------------------------------------------- |
 | boost         | >=1.73.0 | serialize hashmap                                          |
@@ -14,11 +42,13 @@ This program can map barcode of stereomics-seq to stereomics-chip
 | hdf5          | >=1.10.7 | hdf5 format mask file read                                 |
 
 ## make the runnable program
-```
-##add the requested packages in your environment value or specify their path in Makefile by INCLUDE_DIRS and LIBRARY_DIRS
+```bash
+# On Debian/Ubuntu:
+# sudo apt-get install -y build-essential libboost-serialization-dev libhdf5-dev zlib1g-dev
 
 cd ST_BarcodeMap
 make
+sudo make install
 ```
 
 ## Run
