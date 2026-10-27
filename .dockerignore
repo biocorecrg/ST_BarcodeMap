@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.dockerignore
+obj/
+*.o
+ST_BarcodeMap
+ST_BarcodeMap-*
+.DS_Store
+*.md
+LICENSE
+CHANGELOG

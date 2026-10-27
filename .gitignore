@@ -1,5 +1,7 @@
 .DS_Store
 ST_BarcodeMap
+ST_BarcodeMap-*
+obj/
 
 # Prerequisites
 *.d
