@@ -12,6 +12,7 @@
 #include "options.h"
 #include "writer.h"
 #include "proteinBarcodeProcessor.h"
+#include <boost/serialization/version.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/map.hpp>
 

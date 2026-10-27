@@ -5,6 +5,8 @@
 
 #define _DEBUG false
 
+#include <boost/version.hpp>
+#include <boost/serialization/version.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/unordered_map.hpp>
 

@@ -19,8 +19,8 @@ WORKDIR /build
 COPY Makefile ./
 COPY src/ ./src/
 
-ENV CPATH="/usr/include/hdf5/serial:${CPATH}"
-ENV LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/hdf5/serial:/usr/lib/aarch64-linux-gnu/hdf5/serial:${LIBRARY_PATH}"
+ENV CPATH="/usr/include/hdf5/serial"
+ENV LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/hdf5/serial:/usr/lib/aarch64-linux-gnu/hdf5/serial"
 
 RUN make -j"$(nproc)" && \
     make install PREFIX=/install/usr/local
